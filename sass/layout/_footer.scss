@@ -1,0 +1,113 @@
+.footer {
+  background-color: var(--background-color-footer);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  &-flex {
+    display: flex;
+  }
+}
+
+.logo-footer {
+  display: inline-block;
+  font-family: Raleway;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.19;
+  color: var(--primary-title-color);
+  margin-bottom: 20px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+}
+
+.adds {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  color: var(--primary-title-color);
+  margin-bottom: 9px;
+}
+
+.contact-footer {
+  font-style: normal;
+  font-size: 14px;
+  line-height: 1.71;
+  color: rgba(255, 255, 255, 0.6);
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &.mailto {
+    margin-bottom: 9px;
+  }
+  &:hover,
+  &:focus {
+    color: var(--accent-color);
+  }
+}
+
+.footer-social {
+  margin-left: 70px;
+  &-items {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.footer-text {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding-top: 12px;
+  color: var(--primary-title-color);
+}
+
+.social-link-footer {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-link-footer .social-icon {
+  fill: var(--primary-title-color);
+}
+
+.mailing {
+  margin-left: auto;
+}
+
+.email-form-footer {
+  width: 358px;
+  height: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: var(--background-color-footer);
+  border-radius: 4px;
+  padding: 15px 16px;
+}
+
+.btn-footer {
+  padding: 8px 29px;
+  background-color: var(--accent-color);
+  color: var(--background-color-header);
+  display: inline-flex;
+  justify-content: center;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  position: relative;
+  margin: 0;
+  min-height: 43px;
+  margin-left: 12px;
+}
+
+.footer-svg {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+.email-form-footer::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+
+  color: rgba(255, 255, 255, 0.6);
+}
