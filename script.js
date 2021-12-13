@@ -95,16 +95,16 @@
 //   console.log(getEvenNumbers(3, 11)) //[4, 6, 8, 10]
 
 //задача 32
-function includes(array, value) {
-    // Change code below this line
-    for (const arg of array) {
-        console.log(arg);
-        if (arg === value) {
-            return true;
-        }
-    }
-    return false;
-        // Change code above this line
-    }
-    console.log(includes([1, 2, 3, 4, 5], 3))
-    console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"))
+// function includes(array, value) {
+//     // Change code below this line
+//     for (const arg of array) {
+//         console.log(arg);
+//         if (arg === value) {
+//             return true;
+//         }
+//     }
+//     return false;
+//         // Change code above this line
+//     }
+//     console.log(includes([1, 2, 3, 4, 5], 3))
+//     console.log(includes(["Earth", "Mars", "Venus", "Jupiter", "Saturn"], "Uranus"))
