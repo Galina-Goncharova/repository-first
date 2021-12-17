@@ -233,3 +233,40 @@ const getUserWithEmail = (users, email) => {
 };
 
 
+// 35
+const players = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+
+const totalAveragePlaytimePerGame = players.reduce((total, player) => {
+  return (total + player.playtime / player.gamesPlayed);
+}, 0);
+
+
+// 36
+// Change code below this line
+const calculateTotalBalance = users => {
+   const everyBalance = users.reduce((total, user) => {
+     return total + user.balance;
+   }, 0);
+  return everyBalance;
+};
+// Change code above this line
+
+
+// 37
+// Change code below this line
+const getTotalFriendCount = users => {
+  const totalFriend = users.reduce((allFrinds, user) => {
+    allFrinds.push(...user.friends);
+    return allFrinds;
+  }, []);
+  return totalFriend.length;
+};
+// Change code above this line
+
+
