@@ -270,3 +270,157 @@ const getTotalFriendCount = users => {
 // Change code above this line
 
 
+// 39
+// сортировка по возростанию и убыванию методом sort()
+const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// Change code below this line
+
+const ascendingReleaseDates = [...releaseDates].sort((a, b) =>
+                                                     a - b);
+
+const descendingReleaseDates = [...releaseDates].sort((a, b,) =>
+  b - a);
+                                                      
+
+  // 40
+  // сортировка строк в алфавитном и обратном порядке
+  const authors = [
+  "Tanith Lee",
+  "Bernard Cornwell",
+  "Robert Sheckley",
+  "Fyodor Dostoevsky",
+  "Howard Lovecraft",
+];
+// Change code below this line
+
+const authorsInAlphabetOrder = [...authors].sort((a, b) =>
+                                                 a.localeCompare(b));
+
+const authorsInReversedOrder = [...authors].sort((a,b) =>
+  b.localeCompare(a));
+                                                 
+
+  // 41
+  // сортировка по рейтингу и имени автора
+  const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  { title: "Enemy of God", author: "Bernard Cornwell", rating: 8.67 },
+];
+// Change code below this line
+
+const sortedByAuthorName = [...books].sort((firstBook, secondBook) => firstBook.author.localeCompare(secondBook.author));
+
+const sortedByReversedAuthorName = [...books].sort((firstBook, secondBook) => 
+                                                   secondBook.author.localeCompare(firstBook.author));
+
+const sortedByAscendingRating = [...books].sort((firstBook, secondBook) => firstBook.rating - secondBook.rating);
+
+const sortedByDescentingRating = [...books].sort((firstBook, secondBook) => secondBook.rating - firstBook.rating);
+
+
+// 42
+// сортировка по балансу
+// Change code below this line
+const sortByAscendingBalance = users => {
+  const sortedByBalance = [...users].sort((firstUser, secondUser) => firstUser.balance - secondUser.balance);
+  return sortedByBalance;
+};
+// Change code above this line
+
+
+// 43
+// сортировка по количеству друзей
+// Change code below this line
+const sortByDescendingFriendCount = users => {
+   const sortedByFriends = [...users].sort((firstUser, secondUser) => secondUser.friends.length - firstUser.friends.length);
+  return sortedByFriends;
+};
+// Change code above this line
+
+
+// 45
+// Дополни код так, чтобы в переменной names получился массив имён авторов в алфавитном порядке, 
+// рейтинг книг которых больше значения переменной MIN_BOOK_RATING.
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+  { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+  {
+    title: "The Dreams in the Witch House",
+    author: "Howard Lovecraft",
+    rating: 8.67,
+  },
+];
+const MIN_BOOK_RATING = 8;
+// Change code below this line
+
+const names = [...books]
+.filter(book => book.rating > MIN_BOOK_RATING)
+.map(book => book.author)
+  .sort((a, b) => a.localeCompare(b));
+
+
+  // 46
+  // Дополни функцию getNamesSortedByFriendCount(users) так, 
+  // чтобы она возвращала массив имён пользователей отсортированный по возрастанию количества их друзей(свойство friends).
+  // Change code below this line
+const getNamesSortedByFriendCount = users => {
+     const sortedByFriends = [...users].sort((firstUser, secondUser) => firstUser.friends.length - secondUser.friends.length)
+     .map(user => user.name);
+  return sortedByFriends;
+};
+// Change code above this line
+
+
+// 47
+// Дополни функцию getSortedFriends(users) так, 
+// чтобы она возвращала массив уникальных имён друзей(свойство friends) отсортированный по алфавиту.
+// Change code below this line
+const getSortedFriends = users => {
+   const sortedFriends = [...users].flatMap(user => user.friends)
+   .filter((friend, index, array) => array.indexOf(friend) === index)
+   .sort((a, b) => a.localeCompare(b));
+  return sortedFriends;
+};
+// Change code above this line
+
+
+// 48
+// Дополни функцию getTotalBalanceByGender(users, gender) так, 
+// чтобы она возвращала общий баланс пользователей(свойство balance),
+//   пол которых(свойство gender) совпадает со значением параметра gender.
+// Change code below this line
+const getTotalBalanceByGender = (users, gender) => {
+  const totalBalanceByGender = users.filter(user => user.gender === gender)
+  .reduce((total, user) => (total + user.balance), 0);
+  return totalBalanceByGender;
+};
+// Change code above this line
